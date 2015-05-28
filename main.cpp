@@ -1,5 +1,5 @@
 #define UNICODE
-#pragma comment(linker,"/opt:nowin98")
+
 #include<windows.h>
 #include"resource.h"
 
@@ -200,10 +200,9 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 	return 0;
 }
 
-EXTERN_C void __cdecl WinMainCRTStartup()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPSTR pCmdLine, int nCmdShow)
 {
 	MSG msg;
-	HINSTANCE hInstance=GetModuleHandle(0);
 	WNDCLASS wndclass={
 		0,
 			WndProc,
@@ -240,9 +239,5 @@ EXTERN_C void __cdecl WinMainCRTStartup()
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
-	ExitProcess(msg.wParam);
+	return msg.wParam;
 }
-
-#if _DEBUG
-void main(){}
-#endif
