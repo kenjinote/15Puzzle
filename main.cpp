@@ -3,7 +3,7 @@
 #include<windows.h>
 #include"resource.h"
 
-TCHAR szClassName[]=TEXT("Window");
+TCHAR szClassName[]=TEXT("15Puzzle");
 
 #define BITMAP_WIDTH 100
 #define BITMAP_HEIGHT 99
@@ -179,8 +179,8 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 					);
 				if(IDYES==MessageBox(
 					hWnd,
-					TEXT("Ç‡Ç§àÍìxçsÇ¢Ç‹Ç∑Ç©?"),
-					TEXT("äÆê¨!"),
+					TEXT("„ÇÇ„ÅÜ‰∏ÄÂ∫¶Ë°å„ÅÑ„Åæ„Åô„Åã?"),
+					TEXT("ÂÆåÊàê!"),
 					MB_YESNO)
 					)
 					SendMessage(hWnd,WM_RANDOM,0,0);
