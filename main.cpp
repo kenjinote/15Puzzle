@@ -188,7 +188,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 		}
 		break;
 	case WM_DESTROY:
-		for(i=0;i<15;i++)
+		for(i = 0; i < 15; i++)
 		{
 			DeleteObject(hBitmap[i]);
 		}
@@ -205,15 +205,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPSTR pCmdLine, int 
 	MSG msg;
 	WNDCLASS wndclass={
 		0,
-			WndProc,
-			0,
-			0,
-			hInstance,
-			0,
-			LoadCursor(0,IDC_ARROW),
-			0,
-			0,
-			szClassName
+		WndProc,
+		0,
+		0,
+		hInstance,
+		0,
+		LoadCursor(0,IDC_ARROW),
+		0,
+		0,
+		szClassName
 	};
 	RegisterClass(&wndclass);
 	RECT rect;
@@ -234,7 +234,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInst, LPSTR pCmdLine, int 
 		);
 	ShowWindow(hWnd,SW_SHOWDEFAULT);
 	UpdateWindow(hWnd);
-	while(GetMessage(&msg,0,0,0))
+	while(GetMessage(&msg, 0, 0, 0))
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
